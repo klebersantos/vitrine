@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{post.title.rendered}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides *ngIf="!post.acf.foto_um == 0">
+    <ion-slide>
+      <img src="{{post.acf.foto_um}}" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="{{post.acf.foto_dois}}" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="{{post.acf.foto_tres}}" alt="">
+    </ion-slide>
+  </ion-slides>
+  <br>
+  <br>
+
+  <!-- <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" /> -->
+
+  <div padding>
+    <h1>{{post.title.rendered}}</h1>
+    <ion-row>
+      <ion-badge color="second">
+        {{api.getCatName(post.categoria_masculino[0])}}
+      </ion-badge>
+   
+    </ion-row>
+
+    <br>
+    <br> preço: {{post.acf.valor}}
+    <br>
+    <br> Estoque: {{post.acf.quantidade}}
+    <br>
+    <br>
+
+    <div [innerHTML]="post.content.rendered"></div>
+  </div>
+
+  <h2 padding-left>Relacionados</h2>
+
+  <div *ngIf="isLoading" text-center padding>
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <div padding>
+    <ion-card *ngFor="let item of relatedItems" (click)="openDetail(item)">
+      <img src="{{item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" />
+      <ion-card-content>
+        <ion-card-title>
+          {{item.title.rendered}}
+        </ion-card-title>
+        <ion-row>
+          <ion-badge color="second">
+            {{api.getCatName(item.categoria_masculino[0])}}
+          </ion-badge>
+          <ion-badge color="light">
+            <ion-icon name="time"></ion-icon>
+            {{item.date | date: "dd.MM.yyyy / hh:mm"}}
+          </ion-badge>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

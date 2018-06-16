@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Feminino</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(0)">
+        Todas
+      </button>
+      <button ion-item *ngFor="let cat of api.Categories" (click)="openPage(cat.id)">
+        {{cat.name}}
+      </button>
+    
+    </ion-list>
+  </ion-content>
