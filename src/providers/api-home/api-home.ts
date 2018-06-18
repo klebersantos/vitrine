@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiHomeProvider {
 
-  private API_URL:string = 'http://localhost/vitrine/wp-json/wp/v2/';
+  private API_URL:string = 'http://kleberdev.com/vitrine/wp-json/wp/v2/';
   public Pages: any = [];
   
   

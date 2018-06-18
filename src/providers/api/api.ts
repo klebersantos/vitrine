@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 export class ApiProvider {
 
   
-  private API_URL:string = 'http://localhost/vitrine/wp-json/wp/v2/';
+  private API_URL:string = 'http://kleberdev.com/vitrine/wp-json/wp/v2/';
   public Categories: any = [];
   
 
