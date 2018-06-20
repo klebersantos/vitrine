@@ -1,14 +1,8 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content>
   
   <div *ngFor="let item of items">
 
-    <ion-slides *ngIf="!item.acf.banner_um == 0">
+    <ion-slides pager *ngIf="!item.acf.banner_um == 0">
         <ion-slide>
           <img src="{{item.acf.banner_um}}" alt="">
         </ion-slide>
@@ -20,13 +14,12 @@
         </ion-slide>
       </ion-slides>
     
-    <p padding [innerHTML]="item.content.rendered"></p>
-
-    
-
-    
 
   </div>
+
+  <div *ngIf="isLoading" text-center padding>
+      <ion-spinner></ion-spinner>
+    </div>
 
  
 </ion-content>

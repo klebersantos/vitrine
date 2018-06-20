@@ -2,7 +2,6 @@ import { BuscaFemininoPage } from './../busca-feminino/busca-feminino';
 import { DatalheFemininoPage } from './../datalhe-feminino/datalhe-feminino';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DetalhePage } from '../detalhe/detalhe';
 import { ApiFemininoProvider } from '../../providers/api-feminino/api-feminino';
 
 @IonicPage()
@@ -14,10 +13,10 @@ export class FemininoListaPage {
 
   data: any = [];
   public items: any = [];
-  private per_page:number = 10;
+  private per_page:number = 5;
   private page:number = 1;
   private isLoading:boolean = false;
-  private showLoadMore = false;
+  public showLoadMore = false;
   private category_id:number = 0;
 
   constructor(public navCtrl: NavController, public api: ApiFemininoProvider, public navParms: NavParams) {

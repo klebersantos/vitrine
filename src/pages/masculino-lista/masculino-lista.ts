@@ -13,10 +13,10 @@ export class MasculinoListaPage {
 
   data: any = [];
   public items: any = [];
-  private per_page:number = 10;
+  private per_page:number = 5;
   private page:number = 1;
   private isLoading:boolean = false;
-  private showLoadMore = false;
+  public showLoadMore = false;
   private category_id:number = 0;
 
   constructor(public navCtrl: NavController, public api: ApiProvider, public navParms: NavParams) {
@@ -25,6 +25,7 @@ export class MasculinoListaPage {
     }
     this.getPosts();
   }
+  
 
   getPosts(ionRefresh = null){
     if(!this.isLoading){

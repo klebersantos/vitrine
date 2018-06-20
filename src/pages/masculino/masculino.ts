@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, Nav } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { MasculinoListaPage } from '../masculino-lista/masculino-lista';
 import { ApiProvider } from '../../providers/api/api';
 
@@ -12,9 +12,31 @@ import { ApiProvider } from '../../providers/api/api';
 
 export class MasculinoPage {
   
-
+  public Categories: any = [];
+  private isLoading:boolean = false;
+  data: any = [];
+  
   constructor(public api: ApiProvider, public navCtrl: NavController, public navParams: NavParams) {
-    this.api.getCategories();
+    
+    this.getCategories();
+
+  }
+
+
+  getCategories() {
+    if(!this.isLoading){
+      this.isLoading = true;
+
+      this.api.get('categoria_masculino').subscribe((data: any) => {
+        this.isLoading = false;
+        this.Categories = this.Categories.concat(data);
+        
+        console.log(this.Categories);
+
+      },(error) => {
+        this.isLoading = false;
+      });
+    }
   }
 
 

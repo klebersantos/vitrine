@@ -13,9 +13,13 @@
       <button ion-item (click)="openPage(0)">
         Todas
       </button>
-      <button ion-item *ngFor="let cat of api.Categories" (click)="openPage(cat.id)">
+      <button ion-item *ngFor="let cat of Categories" (click)="openPage(cat.id)">
         {{cat.name}}
       </button>
     
     </ion-list>
+    <div *ngIf="isLoading" text-center padding>
+        <ion-spinner></ion-spinner>
+      </div>
+
   </ion-content>

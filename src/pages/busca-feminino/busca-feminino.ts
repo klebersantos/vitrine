@@ -15,7 +15,7 @@ export class BuscaFemininoPage {
   public items: any = [];
   private per_page:number = 100;
   private page:number = 1;
-  private showLoadMore = false;
+  public showLoadMore = false;
   private isLoading = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiFemininoProvider) {

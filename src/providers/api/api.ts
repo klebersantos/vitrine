@@ -13,7 +13,9 @@ export class ApiProvider {
   
   private API_URL:string = 'http://kleberdev.com/vitrine/wp-json/wp/v2/';
   public Categories: any = [];
+  private isLoading:boolean = false;
   
+  data: any = [];
 
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
@@ -23,19 +25,7 @@ export class ApiProvider {
     return this.http.get(this.API_URL + query);
   }
 
-  getCategories() {
-    this.get('categoria_masculino').subscribe((data) => {
-      this.Categories = data;
-      console.log(this.Categories);
-    });
-  }
-
-  getCategories2() {
-    this.get('categoria_feminino').subscribe((data) => {
-      this.Categories = data;
-      console.log(this.Categories);
-    });
-  }
+ 
 
   getCatName(cat_id:number) {
     let cat_name: string = '';

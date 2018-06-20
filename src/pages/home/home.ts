@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { ApiHomeProvider } from '../../providers/api-home/api-home';
 
 @Component({
@@ -8,27 +7,46 @@ import { ApiHomeProvider } from '../../providers/api-home/api-home';
 })
 export class HomePage {
 
-
+  
   data: any = [];
   public items: any = [];
-  constructor(public navCtrl: NavController, public api: ApiHomeProvider) {
+  private isLoading:boolean = false;
+
+  constructor(public api: ApiHomeProvider) {
     
     this.getPosts();
 
   }
 
-  getPosts(){
+  // getPosts(){
     
-    this.api.get('pages/23')
-    .subscribe(data => {
+  //   this.api.get('pages/23')
+  //   .subscribe(data => {
       
-      this.items = this.items.concat(data);
-      this.items;
-      console.log(data);
-    })
+  //     this.items = this.items.concat(data);
+  //     this.items;
+  //     console.log(data);
+  //   })
  
-  }
+  // }
 
- 
+  getPosts(){
+    if(!this.isLoading){
+      this.isLoading = true;
+    
+      this.api.get('pages/23')
+      .subscribe((data:any) => {
+        this.isLoading = false;
+        
+        this.items = this.items.concat(data);
+        // this.items = this.items.concat(data);
+       
+        console.log(this.isLoading);
+      }, (error) => {
+        this.isLoading = false;
+      });
+      
+    }
+  }
 
 }

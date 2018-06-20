@@ -9,6 +9,10 @@
 
 <ion-content>
 
+    <div *ngIf="isLoading" text-center padding>
+        <ion-spinner></ion-spinner>
+      </div>
+
   <ion-slides *ngIf="!post.acf.foto_um == 0">
     <ion-slide>
       <img src="{{post.acf.foto_um}}" alt="">
