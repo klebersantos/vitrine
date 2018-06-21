@@ -18,6 +18,7 @@ export class FemininoPage {
   
   constructor(public api: ApiFemininoProvider, public navCtrl: NavController, public navParams: NavParams) {
     this.getCategories2();
+    this.api.getCategories2();
   }
 
 

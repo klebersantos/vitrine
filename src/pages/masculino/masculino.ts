@@ -12,6 +12,7 @@ import { ApiProvider } from '../../providers/api/api';
 
 export class MasculinoPage {
   
+  get: any;
   public Categories: any = [];
   private isLoading:boolean = false;
   data: any = [];
@@ -19,9 +20,16 @@ export class MasculinoPage {
   constructor(public api: ApiProvider, public navCtrl: NavController, public navParams: NavParams) {
     
     this.getCategories();
+    this.api.getCategories();
 
   }
 
+  // getCategories() {
+  //   this.api.get('categoria_masculino').subscribe((data) => {
+  //     this.Categories = data;
+  //     console.log(this.Categories);
+  //   });
+  // }
 
   getCategories() {
     if(!this.isLoading){
@@ -29,7 +37,7 @@ export class MasculinoPage {
 
       this.api.get('categoria_masculino').subscribe((data: any) => {
         this.isLoading = false;
-        this.Categories = this.Categories.concat(data);
+        this.Categories = data;
         
         console.log(this.Categories);
 

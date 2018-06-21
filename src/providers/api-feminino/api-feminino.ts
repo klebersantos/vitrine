@@ -22,7 +22,12 @@ export class ApiFemininoProvider {
     return this.http.get(this.API_URL + query);
   }
 
- 
+  getCategories2() {
+    this.get('categoria_feminino').subscribe((data) => {
+      this.Categories = data;
+      console.log(this.Categories);
+    });
+  }
 
   getCatName2(cat_id:number) {
     let cat_name: string = '';
