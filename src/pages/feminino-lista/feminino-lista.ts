@@ -13,7 +13,7 @@ export class FemininoListaPage {
 
   data: any = [];
   public items: any = [];
-  private per_page:number = 5;
+  private per_page:number = 8;
   private page:number = 1;
   private isLoading:boolean = false;
   public showLoadMore = false;

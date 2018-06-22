@@ -1,3 +1,4 @@
+import { InternaPage } from './../pages/interna/interna';
 import { DatalheFemininoPage } from './../pages/datalhe-feminino/datalhe-feminino';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,6 +38,7 @@ import { ApiHomeProvider } from '../providers/api-home/api-home';
     FemininoListaPage,
     DatalheFemininoPage,
     BuscaFemininoPage,
+    InternaPage,
     TabsPage
   ],
   imports: [
@@ -63,6 +65,7 @@ import { ApiHomeProvider } from '../providers/api-home/api-home';
     MasculinoListaPage,
     FemininoListaPage,
     DatalheFemininoPage,
+    InternaPage,
     BuscaFemininoPage,
     TabsPage
   ],

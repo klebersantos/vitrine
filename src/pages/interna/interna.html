@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle right>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{post.title.rendered}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-slides pager *ngIf="!post.acf.banner_um == 0">
+      <ion-slide>
+        <img src="{{post.acf.banner_um}}" alt="">
+      </ion-slide>
+      <ion-slide *ngIf="!post.acf.banner_dois == 0">
+        <img src="{{post.acf.banner_dois}}" alt="">
+      </ion-slide>
+      <ion-slide *ngIf="!post.acf.banner_tres == 0">
+        <img src="{{post.acf.banner_tres}}" alt="">
+      </ion-slide>
+    </ion-slides>
+
+  <p padding [innerHTML]="post.content.rendered"></p>
+
+</ion-content>
+
+
