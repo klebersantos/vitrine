@@ -26,7 +26,6 @@ export class ApiHomeProvider {
   getPages() {
     this.get('pages').subscribe((data) => {
       this.Pages = data;
-      console.log(this.Pages);
     });
   }
 }

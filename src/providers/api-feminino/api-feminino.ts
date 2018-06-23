@@ -25,7 +25,6 @@ export class ApiFemininoProvider {
   getCategories2() {
     this.get('categoria_feminino').subscribe((data) => {
       this.Categories = data;
-      console.log(this.Categories);
     });
   }
 

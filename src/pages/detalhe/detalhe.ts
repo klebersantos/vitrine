@@ -34,7 +34,6 @@ export class DetalhePage {
         this.isLoading = false;
         this.relatedItems = data;
         this.length;
-        console.log(data);
       }, (error) => {
         this.isLoading = false;
       });

@@ -7,10 +7,14 @@
     <ion-content>
         <ion-list class="menu2">
             <button menuClose ion-item *ngFor="let item of items" (click)="openPage(item)">
-                <ion-label>{{item.slug}}</ion-label>
+                <ion-label>{{item.title.rendered}}</ion-label>
             </button>
         </ion-list>
+        <div *ngIf="isLoading" text-center center padding>
+            <ion-spinner></ion-spinner>
+          </div>
     </ion-content>
+    
 </ion-menu>
 
 <ion-nav #contentMenu [root]="rootPage"></ion-nav>

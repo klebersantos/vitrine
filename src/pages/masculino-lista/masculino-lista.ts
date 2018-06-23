@@ -57,6 +57,8 @@ export class MasculinoListaPage {
           ionRefresh.complete();
         }
       });
+
+      
       
     }
   }

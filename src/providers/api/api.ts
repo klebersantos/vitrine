@@ -24,7 +24,6 @@ export class ApiProvider {
   getCategories() {
     this.get('categoria_masculino').subscribe((data) => {
       this.Categories = data;
-      console.log(this.Categories);
     });
   }
 

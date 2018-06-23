@@ -1,10 +1,9 @@
-import { HomePage } from './../pages/home/home';
 import { InternaPage } from './../pages/interna/interna';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { NavController, App } from 'ionic-angular';
+import { App } from 'ionic-angular';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ApiHomeProvider } from '../providers/api-home/api-home';
 
@@ -51,8 +50,6 @@ export class MyApp {
         this.items = data;
         // this.items = this.items.concat(data);
        
-        console.log(this.items);
-        console.log(this.isLoading);
       }, (error) => {
         this.isLoading = false;
       });
@@ -61,7 +58,6 @@ export class MyApp {
   }
 
   openPage(item){
-    console.log(item);
     // this.nav.push(item.component);
     
     this.nav.push(InternaPage, {post: item});

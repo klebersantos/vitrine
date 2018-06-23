@@ -39,8 +39,6 @@ export class MasculinoPage {
         this.isLoading = false;
         this.Categories = data;
         
-        console.log(this.Categories);
-
       },(error) => {
         this.isLoading = false;
       });

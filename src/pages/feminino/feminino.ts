@@ -30,8 +30,6 @@ export class FemininoPage {
         this.isLoading = false;
         this.Categories = this.Categories.concat(data);
         
-        console.log(this.Categories);
-
       },(error) => {
         this.isLoading = false;
       });

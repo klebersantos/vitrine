@@ -24,7 +24,7 @@
       </ion-slide>
     </ion-slides>
 
-  <p padding [innerHTML]="post.content.rendered"></p>
+  <p *ngIf="!post.content.rendered == 0" padding [innerHTML]="post.content.rendered"></p>
 
 </ion-content>
 
