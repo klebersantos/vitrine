@@ -16,10 +16,13 @@ export class MyApp {
 
   rootPage:any = TabsPage;
 
+  statusBar: any;
   
   data: any = [];
   public items: any = [];
   private isLoading:boolean = false;
+
+  
 
   constructor(
     public app: App,
@@ -33,10 +36,13 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
       
-      this.getPosts();
+      this.getPosts(); 
 
     });
   }
+ 
+  
+   
 
 
   getPosts(){
@@ -65,3 +71,6 @@ export class MyApp {
 
 
 }
+
+
+  

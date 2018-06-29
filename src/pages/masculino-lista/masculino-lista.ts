@@ -24,6 +24,7 @@ export class MasculinoListaPage {
       this.category_id = this.navParms.get('cat_id');
     }
     this.getPosts();
+    console.log(this.category_id);
   }
   
 

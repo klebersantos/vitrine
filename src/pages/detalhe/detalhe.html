@@ -9,45 +9,48 @@
 
 <ion-content>
 
-    <div *ngIf="isLoading" text-center padding>
-        <ion-spinner></ion-spinner>
-      </div>
+  <div *ngIf="isLoading" text-center padding>
+    <ion-spinner></ion-spinner>
+  </div>
 
   <ion-slides *ngIf="!post.acf.foto_um == 0">
     <ion-slide>
       <img src="{{post.acf.foto_um}}" alt="">
     </ion-slide>
-    <ion-slide>
+    <ion-slide *ngIf="!post.acf.foto_dois == 0">
       <img src="{{post.acf.foto_dois}}" alt="">
     </ion-slide>
-    <ion-slide>
+    <ion-slide *ngIf="!post.acf.foto_tres == 0">
       <img src="{{post.acf.foto_tres}}" alt="">
     </ion-slide>
   </ion-slides>
-  
-  <a id="whatsapp_topo" class="elementor-clickable" href="https://api.whatsapp.com/send?phone=5588987774067" target="_blank" rel="noopener" data-elementor-open-lightbox="default">
-    <img class="attachment-full size-full" src="http://www.terrasantamotos.com.br/wp-content/uploads/2017/10/wtz.png" alt="" /> 
+
+  <a id="whatsapp_topo" ion-button round href="https://api.whatsapp.com/send?phone=5585987774067" target="_blank" data-elementor-open-lightbox="default">
+    Fale pelo WhatsApp
   </a>
 
   <!-- <img src="{{post._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" /> -->
 
   <div padding>
-    <h1>{{post.title.rendered}}</h1>
+    <h1 [innerHTML]="post.title.rendered"></h1>
     <ion-row>
       <ion-badge color="second">
         {{api.getCatName(post.categoria_masculino[0])}}
       </ion-badge>
-   
+
     </ion-row>
 
-    <br>
-    <br> preço: {{post.acf.valor}}
-    <br>
-    <br> Estoque: {{post.acf.quantidade}}
-    <br>
+    <span class="preco">Preço:
+      <strong>{{post.acf.valor}}</strong>
+    </span>
+
+    <span class="estoque">Estoque:
+      <strong>{{post.acf.quantidade}}</strong>
+    </span>
+
     <br>
 
-    <div [innerHTML]="post.content.rendered"></div>
+    <div class="conteudos" [innerHTML]="post.content.rendered"></div>
   </div>
 
   <h2 padding-left>Relacionados</h2>
@@ -57,7 +60,7 @@
   </div>
 
   <div padding>
-    <ion-card *ngFor="let item of relatedItems" (click)="openDetail(item)">
+    <!-- <ion-card *ngFor="let item of relatedItems" (click)="openDetail(item)">
       <img src="{{item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" />
       <ion-card-content>
         <ion-card-title>
@@ -73,7 +76,25 @@
           </ion-badge>
         </ion-row>
       </ion-card-content>
-    </ion-card>
+    </ion-card> -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 *ngFor="let item of relatedItems" (click)="openDetail(item)">
+
+          <div class="box">
+            <ion-thumbnail item-start>
+              <img src="{{item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" />
+            </ion-thumbnail>
+            <h2 [innerHTML]="item.title.rendered"></h2>
+            <h5>{{item.acf.valor}}</h5>
+          </div>
+
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
   </div>
 
 </ion-content>
