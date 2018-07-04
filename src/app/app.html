@@ -4,7 +4,7 @@
             <ion-title>Menu</ion-title>
         </ion-toolbar>
     </ion-header>    
-    <ion-content>
+    <ion-content class="menuapp">
         <ion-list class="menu2">
             <button menuClose ion-item *ngFor="let item of items" (click)="openPage(item)">
                 <ion-label>{{item.title.rendered}}</ion-label>
