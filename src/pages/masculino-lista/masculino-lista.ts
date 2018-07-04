@@ -38,6 +38,7 @@ export class MasculinoListaPage {
       .subscribe((data:any) => {
         this.isLoading = false;
         this.items = ionRefresh!=null && ionRefresh ? data : this.items.concat(data);
+        console.log(this.items);
         // this.items = this.items.concat(data);
         if(data.length===this.per_page) {
           this.page++;

@@ -22,6 +22,9 @@
                   <img  src="{{item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" />
               </ion-thumbnail>
               <h2 [innerHTML]="item.title.rendered"></h2>
+              <ion-badge color="second">
+                {{api.getCatName2(item.categoria_feminino[0])}}
+              </ion-badge>
               <h5>{{item.acf.valor}}</h5>
             </div>
     

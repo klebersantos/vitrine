@@ -1,5 +1,3 @@
-import { InternaPage } from './../pages/interna/interna';
-import { DatalheFemininoPage } from './../pages/datalhe-feminino/datalhe-feminino';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -16,6 +14,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MasculinoPage } from '../pages/masculino/masculino';
 import { FemininoPage } from '../pages/feminino/feminino';
 import { BuscaPage } from '../pages/busca/busca';
+import { DatalheFemininoPage } from './../pages/datalhe-feminino/datalhe-feminino';
+import { InternaPage } from './../pages/interna/interna';
 import { DetalhePage } from '../pages/detalhe/detalhe';
 import { MasculinoListaPage } from '../pages/masculino-lista/masculino-lista';
 import { FemininoListaPage } from '../pages/feminino-lista/feminino-lista';

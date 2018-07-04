@@ -4,7 +4,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Produtos</ion-title>
+    <ion-title>Masculino</ion-title>
    
     <ion-buttons end>
       <button icon-only ion-button (click)="openSearchPage()">
@@ -30,6 +30,9 @@
               <img  src="{{item._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url}}" />
           </ion-thumbnail>
           <h2 [innerHTML]="item.title.rendered"></h2>
+          <ion-badge color="second">
+            {{api.getCatName(item.categoria_masculino[0])}}
+          </ion-badge>
           <h5>{{item.acf.valor}}</h5>
           <!-- {{api.getCatName(item.categoria_masculino[0])}} -->
         </div>
